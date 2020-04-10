@@ -10,6 +10,10 @@ class App extends Component {
     username: 'superantonio'
   }
 
+  usernameChangedHandler = (event) => {
+    this.setState({ username: event.target.value });
+  }
+
   render() {
     return (
       <div className="App">
@@ -25,9 +29,9 @@ class App extends Component {
           <li>Add two-way-binding to your input (in UserInput) to also display the starting username</li>
           <li>Add styling of your choice to your components/ elements in the components - both with inline styles and stylesheets</li>
         </ol>
-        <UserInput/>
-        <UserOutput userName={this.state.username}/>
-        <UserOutput userName={this.state.username}/>
+        <UserInput changed={ this.usernameChangedHandler }/>
+        <UserOutput userName={ this.state.username }/>
+        <UserOutput userName={ this.state.username }/>
         <UserOutput userName="Antonio"/>
       </div>
     );
